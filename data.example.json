@@ -1,0 +1,69 @@
+{
+  "name_first": "John",
+  "name_last": "Doe",
+  "title": "Job Title",
+  "github_url": "https://github.com/username",
+  "github_label": "https://github.com/username",
+  "website_url": "https://yourwebsite.dev/",
+  "website_label": "https://yourwebsite.dev/",
+  "email": "your.email@example.com",
+  "address_line1": "Street Name 1",
+  "address_city": "City, ZipCode",
+  "phone": "(+00) 000 00 00 000",
+  "country": "Country",
+  "dob": "dd/mm/yyyy",
+  "linkedin_url": "https://www.linkedin.com/in/username/",
+  "linkedin_label": "LinkedIn",
+  "headshot": "headshot_1.jpg",
+  "profile_summary": "Short profile summary of all past experiences.",
+  "tech_logos": [
+    { "file": "logo1.png", "height": "0.9cm" },
+    { "file": "logo2.png", "height": "0.9cm" },
+    { "file": "logo3.png", "height": "0.9cm" }
+  ],
+  "skills": [
+    {
+      "category": "Skill Category 1",
+      "items": ["Skill1", "Skill2", "Skill3", "Skill4"]
+    },
+    {
+      "category": "Skill Category 2",
+      "items": ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5"]
+    },
+    {
+      "category": "Skill Category 3",
+      "items": ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5"]
+    },
+    {
+      "category": "Skill Category 4",
+      "items": ["Skill1", "Skill2", "Skill3", "Skill4"]
+    },
+    {
+      "category": "Skill Category 5",
+      "items": ["Skill1", "Skill2", "Skill3"]
+    }
+  ],
+  "languages": ["Language1", "Language2"],
+  "employment": [
+    {
+      "role": "Job Title 1 at Company1",
+      "location": "City1, Country1",
+      "period": "Month Year --- Present",
+      "description": "First paragraph of job description.\n\nSecond paragraph of job description."
+    },
+    {
+      "role": "Job Title 2 at Company2",
+      "location": "City2, Country2",
+      "period": "Month Year --- Month Year",
+      "description": "Job description paragraph."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Degree Name, Field of Study",
+      "institution": "University Name, City",
+      "period": "Month Year --- Month Year",
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+% ============================================================
+%  CV Template — pdflatex
+%
+%  DO NOT compile this file directly.
+%  Run:  python build.py
+%
+%  build.py reads data.json, substitutes all %%PLACEHOLDER%%
+%  tokens below, writes cv-filled.tex, then runs pdflatex.
+% ============================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[top=1.5cm, bottom=1.5cm, left=0.8cm, right=1.5cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage{paracol}
+\usepackage{tikz}
+
+\definecolor{primary}{HTML}{2D2D2D}
+\definecolor{accent}{HTML}{3B7DD8}
+\definecolor{lightgray}{HTML}{999999}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    urlcolor=accent,
+    pdfencoding=auto,
+    pdftitle={%%FIRSTNAME%% %%LASTNAME%% - %%TITLE%%},
+}
+
+\titleformat{\section}
+    {\small\bfseries\uppercase}{}
+    {0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{9pt}{5pt}
+
+\pagestyle{empty}
+
+\newcommand{\employmentHistoryEntry}[4]{%
+    \noindent\textbf{#1}\\
+    \textit{#2}
+    \textcolor{lightgray}{#3}\\[4pt]
+    \hspace*{8pt}\begin{minipage}[t]{\dimexpr\linewidth-8pt}#4\end{minipage}\par\vspace{8pt}
+}
+
+\newcommand{\skillitem}[1]{\item #1}
+
+\begin{document}
+
+%% Headshot
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] at ([xshift=0.8cm, yshift=-0.39cm]current page.north west)
+    {\includegraphics[width=2.7cm]{%%HEADSHOT%%}};
+\end{tikzpicture}
+
+\vspace*{-1.50cm}
+
+\noindent\hspace*{3.7cm}%
+\begin{minipage}[t]{\dimexpr\textwidth-9.8cm}
+    {\large\bfseries %%FIRSTNAME%%}\\[4pt]
+    {\large\bfseries %%LASTNAME%%}\\[4pt]
+    {\large %%TITLE%%}\\[4pt]
+    \makebox[1.2em][l]{\faGithub} \href{%%GITHUB_URL%%}{%%GITHUB_LABEL%%}\\[4pt]
+    \makebox[1.2em][l]{\faTerminal} \href{%%WEBSITE_URL%%}{%%WEBSITE_LABEL%%}\\[10pt]
+    %%TECH_LOGOS%%
+\end{minipage}%
+\hfill
+\vrule width 0.4pt\hspace{8pt}%
+\begin{minipage}[t]{5.5cm}
+    {\small\bfseries\uppercase{Details \& Contact}}\\[-2pt]
+    \rule{\linewidth}{0.4pt}\\[4pt]
+    \small
+    \faEnvelope \quad \href{mailto:%%EMAIL%%}{%%EMAIL%%}\\[2pt]
+    \faMapMarker*\ \quad %%ADDRESS_LINE1%%\\[2pt]
+    \phantom{\faMapMarker*}\ \quad %%ADDRESS_CITY%%\\[2pt]
+    \faPhone*\ \quad %%PHONE%%\\[2pt]
+    \faGlobeEurope \quad %%COUNTRY%%\\[2pt]
+    \faBirthdayCake\ \quad %%DOB%%\\[2pt]
+    \faLinkedin \quad \href{%%LINKEDIN_URL%%}{%%LINKEDIN_LABEL%%}
+\end{minipage}
+
+\setlength{\columnsep}{1cm}
+\columnratio{0.25}
+\vspace{0.6cm}
+\begin{paracol}{2}
+
+    \section*{\ Skills}
+    \small
+    \begin{itemize}[leftmargin=0pt, label={}, itemsep=1pt, parsep=0pt]
+        %%SKILLS%%
+    \end{itemize}
+
+    \section*{\ Languages}
+    \small
+    \begin{itemize}[leftmargin=0pt, label={}, itemsep=2pt]
+        %%LANGUAGES%%
+    \end{itemize}
+
+    \section*{\ References}
+    \noindent \small
+    References available upon request
+
+    \switchcolumn
+
+    \section*{Profile}
+    \noindent %%PROFILE_SUMMARY%%
+
+    \section*{Employment History}
+
+    %%EMPLOYMENT%%
+
+    \section*{Education}
+
+    %%EDUCATION%%
+
+\end{paracol}
+
+\end{document}

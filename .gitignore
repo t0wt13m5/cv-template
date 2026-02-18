@@ -1,0 +1,24 @@
+# Personal data — never commit
+data.json
+
+# Generated filled template (contains personal data)
+cv-filled.tex
+
+# Photo / logos — never commit
+headshot*.jpg
+headshot*.jpeg
+headshot*.png
+*.png
+*.jpeg
+*.jpg
+
+# LaTeX build artefacts
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
